@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap');
 
-/* ===== базовые фиксы ===== */
-* {
+/* ===== БАЗА ===== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html {
   width: 100%;
   overflow-x: hidden;
 }
@@ -18,6 +20,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden; /* ⛔ убираем боковой скролл */
+  touch-action: pan-y;
 }
 
 /* canvas салюта */
@@ -27,7 +31,7 @@ body {
   z-index: -2;
 }
 
-/* ===== карточка ===== */
+/* ===== КАРТОЧКА ===== */
 .phone {
   width: 100%;
   max-width: 390px;
@@ -35,13 +39,15 @@ body {
   background: #fff;
   border-radius: 28px;
   box-shadow: 0 20px 60px rgba(0,0,0,.4);
+
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden;     /* ⛔ ВАЖНО */
   max-height: 100vh;
+
   -webkit-overflow-scrolling: touch;
 }
 
-/* ===== шапка ===== */
+/* ===== HERO ===== */
 .hero {
   position: relative;
   text-align: center;
@@ -80,7 +86,7 @@ body {
   font-size: 14px;
 }
 
-/* ===== таймер ===== */
+/* ===== ТАЙМЕР ===== */
 .timer {
   display: flex;
   justify-content: space-around;
@@ -99,7 +105,7 @@ body {
   color: #999;
 }
 
-/* ===== блоки ===== */
+/* ===== БЛОКИ ===== */
 .block {
   padding: 16px;
   border-top: 1px solid #f0d7e2;
@@ -117,19 +123,23 @@ body {
   line-height: 1.5;
 }
 
-/* ===== Google RSVP форма ===== */
+/* ===== RSVP (Google Form) ===== */
 .rsvp-form {
-  margin-top: -8px;
-  overflow: hidden; /* критично */
+  margin-top: 0;
+  overflow: hidden;        /* ⛔ */
+  width: 100%;
 }
 
 .rsvp-form iframe {
   width: 100%;
+  max-width: 100%;
   border: none;
   border-radius: 14px;
+
+  transform: none !important; /* ⛔ УБРАЛИ SCALE */
 }
 
-/* ===== старые поля (если вдруг останутся) ===== */
+/* ===== СТАРЫЕ ПОЛЯ (если остались) ===== */
 input[type=text] {
   width: 100%;
   padding: 10px;
@@ -157,16 +167,16 @@ button {
   cursor: pointer;
 }
 
-/* ===== примечание (подтвердить до даты) ===== */
+/* ===== ПРИМЕЧАНИЕ ===== */
 .note {
   font-size: 14px;
-  color: #2aa6a1;   /* бирюзовый */
+  color: #2aa6a1; /* бирюзовый */
   text-align: center;
   margin-top: 10px;
   font-weight: 600;
 }
 
-/* ===== адаптация под маленькие экраны ===== */
+/* ===== СУПЕР МАЛЫЕ ЭКРАНЫ ===== */
 @media (max-width: 360px) {
   .hero {
     padding: 140px 16px 45px;
@@ -178,14 +188,5 @@ button {
 
   .block h3 {
     font-size: 17px;
-  }
-}
-
-/* ===== аккуратное уменьшение Google Form ===== */
-@media (max-width: 420px) {
-  .rsvp-form iframe {
-    transform: scale(0.92);
-    transform-origin: top center;
-    height: 820px;
   }
 }
