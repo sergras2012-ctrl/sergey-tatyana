@@ -8,7 +8,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-x: hidden; /* важно */
 }
 
 /* canvas салюта */
@@ -22,19 +22,21 @@ body {
 .phone {
   width: 100%;
   max-width: 390px;
-  margin: 20px;
+  margin: 12px;
   background: #fff;
   border-radius: 28px;
   box-shadow: 0 20px 60px rgba(0,0,0,.4);
-  overflow: hidden;
+  overflow-y: auto;          /* ВАЖНО */
+  max-height: 100vh;         /* ВАЖНО */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* шапка с картинкой */
 .hero {
   position: relative;
   text-align: center;
-  padding: 180px 20px 60px;
-  background: url("images/hero-bg.png") no-repeat center 20%;
+  padding: 160px 18px 50px;
+  background: url("images/hero-bg.png") no-repeat center 22%;
   background-size: cover;
 }
 
@@ -51,61 +53,63 @@ body {
 
 .names {
   font-family: 'Playfair Display', serif;
-  letter-spacing: 3px;
-  font-size: 15px;
+  letter-spacing: 2px;
+  font-size: 14px;
 }
 
 .subtitle {
   font-family: 'Great Vibes', cursive;
-  font-size: 22px;
+  font-size: 20px;
   color: #b45b7c;
   margin-top: 6px;
 }
 
 .date {
-  margin-top: 10px;
+  margin-top: 8px;
   font-weight: 600;
+  font-size: 14px;
 }
 
 /* таймер */
 .timer {
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 16px 10px;
   text-align: center;
 }
 
 .timer span {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .timer small {
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   color: #999;
 }
 
 /* блоки */
 .block {
-  padding: 20px;
+  padding: 16px;
   border-top: 1px solid #f0d7e2;
 }
 
 .block h3 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-family: 'Playfair Display', serif;
   color: #b45b7c;
+  font-size: 18px;
 }
 
 .block p {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
 /* Google RSVP форма */
 .rsvp-form {
-  margin-top: 10px;
+  margin-top: -10px;
 }
 
 .rsvp-form iframe {
@@ -114,35 +118,62 @@ body {
   border-radius: 14px;
 }
 
-/* старые поля (можно оставить — не мешают) */
+/* старые поля (если останутся — не мешают) */
 input[type=text] {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
+  padding: 10px;
+  margin: 8px 0;
   border-radius: 10px;
   border: 1px solid #e0b6c6;
+  font-size: 14px;
 }
 
 label {
   display: block;
   margin: 6px 0;
+  font-size: 14px;
 }
 
 button {
   width: 100%;
-  margin-top: 14px;
-  padding: 14px;
+  margin-top: 12px;
+  padding: 12px;
   border: none;
   border-radius: 12px;
   background: linear-gradient(135deg, #d36c8c, #b45b7c);
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
 }
 
 .note {
-  font-size: 11px;
-  color: #999;
+  font-size: 14px;              /* было 11px → стало заметнее */
+  color: #2aa6a1;               /* бирюзовый, благородный */
   text-align: center;
   margin-top: 10px;
+  font-weight: 600;
+}
+
+/* 👇 Доп. адаптация под маленькие экраны */
+@media (max-width: 360px) {
+  .hero {
+    padding: 140px 16px 45px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .block h3 {
+    font-size: 17px;
+  }
+}
+/* ↓ Уменьшение Google Формы на мобиле */
+@media (max-width: 420px) {
+  .rsvp-form iframe {
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: 111%;
+    height: 850px;
+  }
 }
