@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сергей & Татьяна</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="fireworks"></canvas>
+
+<div class="phone">
+  <div class="hero">
+    <div class="names">СЕРГЕЙ & ТАТЬЯНА</div>
+    <div class="subtitle">Приглашаем вас на нашу свадьбу</div>
+    <div class="date">07 марта 2026 · 15:00</div>
+  </div>
+
+  <div class="timer">
+    <div><span id="weeks">0</span><small>недель</small></div>
+    <div><span id="days">0</span><small>дней</small></div>
+    <div><span id="hours">0</span><small>часов</small></div>
+    <div><span id="minutes">0</span><small>минут</small></div>
+    <div><span id="seconds">0</span><small>секунд</small></div>
+  </div>
+
+  <div class="block">
+    <h3>Место</h3>
+    <p>
+      Ресторан «Парадайз»<br>
+      ул. Маршала Захарова, 6к1
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>Приглашение</h3>
+    <p>
+      Дорогой друг!<br>
+      С радостью приглашаем тебя разделить с нами день нашей свадьбы.<br>
+      Будем счастливы видеть тебя в белых и светлых тонах,
+      поддерживающих атмосферу праздника и нежности.
+    </p>
+  </div>
+
+  <div class="block">
+    <h3>Подтверждение</h3>
+
+    <input id="guestName" type="text" placeholder="Ваше имя и фамилия">
+
+    <label><input type="radio" name="att" value="Приду"> С радостью приду</label>
+    <label><input type="radio" name="att" value="Не смогу"> К сожалению, не смогу</label>
+
+    <button onclick="sendForm()">✔ Подтвердить</button>
+
+    <p class="note">Пожалуйста, подтвердите до 10.02.2026</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Cormorant Garamond', serif;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* canvas салюта */
+#fireworks {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+/* карточка */
+.phone {
+  width: 100%;
+  max-width: 390px;
+  margin: 20px;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  overflow: hidden;
+}
+
+/* шапка с картинкой */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 180px 20px 60px;
+  background: url("images/hero-bg.png") no-repeat center 20%;
+  background-size: cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,240,245,0.75);
+}
+
+.hero * {
+  position: relative;
+}
+
+.names {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+
+.subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 22px;
+  color: #b45b7c;
+  margin-top: 6px;
+}
+
+.date {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* таймер */
+.timer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  text-align: center;
+}
+
+.timer span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.timer small {
+  display: block;
+  font-size: 11px;
+  color: #999;
+}
+
+/* блоки */
+.block {
+  padding: 20px;
+  border-top: 1px solid #f0d7e2;
+}
+
+.block h3 {
+  margin: 0 0 10px;
+  font-family: 'Playfair Display', serif;
+  color: #b45b7c;
+}
+
+.block p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* форма */
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #e0b6c6;
+}
+
+label {
+  display: block;
+  margin: 6px 0;
+}
+
+button {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d36c8c, #b45b7c);
+  color: #fff;
+  font-size: 16px;
+}
+
+.note {
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+  margin-top: 10px;
+}
